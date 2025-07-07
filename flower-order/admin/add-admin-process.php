@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
  
  
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $hashed_password = md5($password, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO tbl_admin (full_name, username, password) VALUES ('$full_name', '$username', '$hashed_password')";
 

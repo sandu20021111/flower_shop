@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include('../config/constants.php');
 
 
@@ -20,7 +21,7 @@ if(isset($_POST['submit']))
     {
         $_SESSION['login'] = "<div class='success'>Login Successful.</div>";
         $_SESSION['user'] = $username;
-        header('location:'.SITEURL.'admin/');
+        header('location:'.SITEURL.'admin/index.php');
         exit(); 
     }
     else
@@ -337,7 +338,7 @@ if(isset($_SESSION['no-login-message']))
     spans.forEach(span => {
         const size = Math.random() * 50 + 10; 
         span.style.width = `${size}px`;
-        span.style.height = `${size}px`; fod
+        span.style.height = `${size}px`; 
         span.style.top = `${Math.random() * 100}%`;
         span.style.left = `${Math.random() * 100}%`;
         span.style.animationDuration = `${Math.random() * 2 + 2}s`; 
