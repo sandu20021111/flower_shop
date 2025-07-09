@@ -1,9 +1,32 @@
-<?php
+<?php 
 session_start();
+include('partials-front/menu.php');
 include('config/constants.php');
 
-$session_id = session_id();
+// Add the same header as index.php
+?>
+<header class="main-header">
+    <div class="container header-container">
+        <div class="logo-container">
+            <h1 class="logo">
+                <i class="fas fa-spa"></i>
+                Flowerworld.
+            </h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="categories.php">Categories</a></li>
+                <li><a href="flower.php">Menu</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="cart.php">🛒 (<?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>)</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<?php
 
+$session_id = session_id();
 
 // Fetch cart items
 $sql = "SELECT * FROM tbl_cart WHERE user_session = '$session_id'";
@@ -45,109 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Checkout</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: #fff5f5;;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            background: #fff7f7;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            text-align: center;
-            color: #c0392b;
-            margin-bottom: 30px;
-        }
-
-        table {
-            width: 100%;
-            margin-bottom: 40px;
-            border-collapse: collapse;
-        }
-
-        table th {
-            background:#ff6b6b;
-            color: white;
-            padding: 14px;
-        }
-
-        table td {
-            padding: 12px;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-
-        tr:nth-child(even) {
-            background-color: #fff0f0;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            font-weight: bold;
-            color:  #c0392b;
-            margin-bottom: 8px;
-        }
-
-        input[type="text"], input[type="email"], textarea {
-            width: 100%;
-            padding: 12px;
-            border-radius: 6px;
-            border: 1px solid #ff8787;
-            font-size: 15px;
-            transition: border 0.3s;
-        }
-
-        input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
-            border-color: #38a169;
-            outline: none;
-        }
-
-        textarea {
-            resize: vertical;
-        }
-
-        button {
-            background:#ff6b6b;
-            color: white;
-            padding: 14px 24px;
-            font-size: 16px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        button:hover {
-            background:  #e05353;
-        }
-
-        .form-group.center {
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
+<div class="container-checkout">
     <h2>🛍️ Checkout</h2>
 
     <table>
@@ -198,5 +119,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 </div>
 
-</body>
-</html>
+<?php include('partials-front/footer.php'); ?>

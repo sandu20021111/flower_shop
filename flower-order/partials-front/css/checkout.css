@@ -1,0 +1,85 @@
+/* checkout.php specific styles */
+.container-checkout {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff7f7;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #c0392b;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 40px;
+    border-collapse: collapse;
+}
+
+table th {
+    background:#ff6b6b;
+    color: white;
+    padding: 14px;
+}
+
+table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #fff0f0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color:  #c0392b;
+    margin-bottom: 8px;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ff8787;
+    font-size: 15px;
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border-color: #38a169;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background:#ff6b6b;
+    color: white;
+    padding: 14px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background:  #e05353;
+}
+
+.form-group.center {
+    text-align: center;
+}
