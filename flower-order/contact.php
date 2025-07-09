@@ -261,7 +261,7 @@ include('partials-front/menu.php');
                 <li><a href="flower.php">Bouquets</a></li>
                 <li><a href="contact.php">Contact</a></li>
                 <li><a href="cart.php">🛒 (<?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>)</a></li>
->
+
             </ul>
         </nav>
     </div>
