@@ -118,21 +118,26 @@ include('partials-front/menu.php');
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
-        }
-
-        .review-card:hover {
-            transform: translateY(-10px) rotate(2deg);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
         }
 
         .review-image {
-            width: 100%;
-            height: 200px;
+            width: 100px;
+            height: 100px;
+            aspect-ratio: 1/1;
             object-fit: cover;
+            object-position: center;
+            display: block;
+            border-radius: 50%;
+            margin: 0 auto 18px auto;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 3px solid #ffd166;
+            background: #f3f3f3;
         }
-
         .review-content {
-            padding: 20px;
+            padding: 0 20px 20px 20px;
+            text-align: center;
         }
 
         .review-text {
@@ -295,7 +300,7 @@ include('partials-front/menu.php');
 
     foreach ($reviews as $review) {
         echo '<div class="review-card">';
-        echo '<img src="' . $review['img'] . '" alt="' . $review['name'] . '" class="review-image">';
+        echo '<div class="review-image-wrapper"><img src="' . $review['img'] . '" alt="' . $review['name'] . '" class="review-image"></div>';
         echo '<div class="review-content">';
         echo '<p class="review-text">' . $review['text'] . '</p>';
         echo '<h3 class="review-name">' . $review['name'] . '</h3>';

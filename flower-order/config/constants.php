@@ -1,6 +1,6 @@
 <?php
 // Only define constants if not already defined (avoids duplicate define errors)
-if (!defined('SITEURL'))     define('SITEURL', 'http://localhost/flower_shop/flower-order/');
+if (!defined('SITEURL'))     define('SITEURL', 'http://localhost/flower-order/');
 if (!defined('LOCALHOST'))   define('LOCALHOST', 'localhost');
 if (!defined('DB_USERNAME')) define('DB_USERNAME', 'root');
 if (!defined('DB_PASSWORD')) define('DB_PASSWORD', '');

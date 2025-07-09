@@ -356,8 +356,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function checkPasswordStrength(password) {
-    // Implement password strength logic here
-    // Return a value between 0 and 100
+    let strength = 0;
+    if (!password) return 0;
+    if (password.length >= 8) strength += 30;
+    if (/[A-Z]/.test(password)) strength += 20;
+    if (/[a-z]/.test(password)) strength += 20;
+    if (/[0-9]/.test(password)) strength += 15;
+    if (/[^A-Za-z0-9]/.test(password)) strength += 15;
+    if (strength > 100) strength = 100;
+    return strength;
 }
 
 function updatePasswordStrengthMeter(strength) {

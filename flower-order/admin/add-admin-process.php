@@ -1,24 +1,5 @@
 <?php
-include('config/constants.php');
-
-header('Content-Type: application/json');
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    $full_name = mysqli_real_escape_string($conn, $_POST['full_name']);
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
-
-    // Check if username already exists
-    $check_username = "SELECT * FROM tbl_admin WHERE username='$username'";
-    $result = mysqli_query($conn, $check_username);
-    if (mysqli_num_rows($result) > 0) {
-        echo json_encode(['success' => false, 'message' => 'Username already exists']);
-        exit();
-    }
-
-    
-error_log("Received POST data: " . print_r($_POST, true));
+include('../config/constants.php');
 
 header('Content-Type: application/json');
 
@@ -34,12 +15,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo json_encode(['success' => false, 'message' => 'All fields are required']);
         exit();
     }
- 
- 
-    $hashed_password = md5($password, PASSWORD_DEFAULT);
+
+    // Check if username already exists
+    $check_username = "SELECT * FROM tbl_admin WHERE username='$username'";
+    $result = mysqli_query($conn, $check_username);
+    if (mysqli_num_rows($result) > 0) {
+        echo json_encode(['success' => false, 'message' => 'Username already exists']);
+        exit();
+    }
+
+    // Hash password securely
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO tbl_admin (full_name, username, password) VALUES ('$full_name', '$username', '$hashed_password')";
-
     $res = mysqli_query($conn, $sql);
 
     if ($res) {
