@@ -24,7 +24,7 @@ include('partials-front/menu.php');
 
     .contact-info {
         flex: 1;
-        background-color: #ffd166;
+        background-color: 	#ffd6d6;
         padding: 60px 40px;
         display: flex;
         flex-direction: column;
@@ -115,31 +115,38 @@ include('partials-front/menu.php');
         transform: translateY(-5px);
         box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
     }
+.form-group {
+    margin-bottom: 25px;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
 
-    .form-group {
-        margin-bottom: 25px;
-    }
+input,
+textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 8px;
+    color: #333;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Prevent overflow due to padding */
+}
 
-    input, textarea {
-        width: 100%;
-        padding: 15px;
-        background-color: #f5f5f5;
-        border: none;
-        border-radius: 8px;
-        color: #333;
-        font-size: 16px;
-        transition: all 0.3s ease;
-    }
+input:focus,
+textarea:focus {
+    background-color: #ffffff;
+    box-shadow: 0 0 0 2px #ff6b6b;
+    outline: none;
+}
 
-    input:focus, textarea:focus {
-        background-color: #ffffff;
-        box-shadow: 0 0 0 2px #ff6b6b;
-    }
+textarea {
+    height: 150px;
+    resize: vertical;
+}
 
-    textarea {
-        height: 150px;
-        resize: vertical;
-    }
 
     .submit-btn {
         background-color: #ff6b6b;
