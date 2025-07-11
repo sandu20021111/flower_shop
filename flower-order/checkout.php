@@ -3,29 +3,6 @@ session_start();
 include('partials-front/menu.php');
 include('config/constants.php');
 
-// Add the same header as index.php
-?>
-<header class="main-header">
-    <div class="container header-container">
-        <div class="logo-container">
-            <h1 class="logo">
-                <i class="fas fa-spa"></i>
-                Flowerworld.
-            </h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="categories.php">Categories</a></li>
-                <li><a href="flower.php">Menu</a></li>
-                <li><a href="contact.php">Contact</a></li>
-                <li><a href="cart.php">🛒 (<?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>)</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<?php
-
 $session_id = session_id();
 
 // Fetch cart items
@@ -68,8 +45,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout | Flowerworld</title>
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="container header-container">
+        <div class="logo-container">
+            <h1 class="logo">
+                <i class="fas fa-spa"></i> Flowerworld.
+            </h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="categories.php">Categories</a></li>
+                <li><a href="flower.php">Menu</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="cart.php">🛒 (<?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>)</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
 <div class="container-checkout">
     <h2>🛍️ Checkout</h2>
+  
 
     <table>
         <tr><th>Flower</th><th>Price</th><th>Qty</th><th>Total</th></tr>
@@ -114,9 +122,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <div class="form-group center">
-            <button type="submit">✅ Place Order</button>
+            <button type="submit"><i class="fas fa-check-circle"></i> Place Order</button>
         </div>
     </form>
 </div>
 
 <?php include('partials-front/footer.php'); ?>
+</body>
+</html>

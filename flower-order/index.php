@@ -5,10 +5,8 @@ include('partials-front/menu.php');
 <header class="main-header">
     <div class="container header-container">
         <div class="logo-container">
-
             <h1 class="logo">
                 <i class="fas fa-spa"></i>
-
                 Flowerworld.
             </h1>
         </div>
@@ -16,10 +14,9 @@ include('partials-front/menu.php');
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="categories.php">Categories</a></li>
-                <li><a href="flower.php">Menu</a></li>
+                <li><a href="flower.php">bouquets</a></li>
                 <li><a href="contact.php">Contact</a></li>
-                <li><a href="cart.php">🛒 (<?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>)</a>
-                </li>
+                <li><a href="cart.php">🛒 (<?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>)</a></li>
             </ul>
         </nav>
     </div>
@@ -27,16 +24,15 @@ include('partials-front/menu.php');
 
 <section id="home" class="hero">
     <div class="hero-bg">
-        <div class="floating-flower">🌸</div>
-        <div class="floating-flower">🌺</div>
-        <div class="floating-flower">🌻</div>
-        <div class="floating-flower">🌷</div>
-        <div class="floating-flower">🌹</div>
+        <video autoplay muted loop class="background-video">
+            <source src="images/home/home.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
     <div class="hero-content">
-        <h2>Delivery fresh flowers your Doorstep</h2>
-        <p>Explore our wide range of cuisines and order now!</p>
+        <h2>Delivery fresh flowers to your Doorstep</h2>
+        <p>Explore our wide range of blooms and order now!</p>
         <div class="search-container">
             <form action="<?php echo SITEURL; ?>flower-search.php" method="POST">
                 <input type="search" name="search" placeholder="Search for flowers..." class="search-input" required>
@@ -44,11 +40,7 @@ include('partials-front/menu.php');
             </form>
         </div>
     </div>
-    </div>
-
 </section>
-
-
 
 <section id="categories" class="categories">
     <div class="container">
@@ -72,7 +64,7 @@ include('partials-front/menu.php');
                             } else {
                                 ?>
                                 <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" alt="<?php echo $title; ?>"
-                                    class="category-img">
+                                     class="category-img">
                                 <?php
                             }
                             ?>
@@ -91,7 +83,7 @@ include('partials-front/menu.php');
 
 <section id="menu" class="flower-menu">
     <div class="container">
-        <h2 class="section-title">flower Menu</h2>
+        <h2 class="section-title">Flower Gallery</h2>
         <div class="menu-grid">
             <?php
             $sql2 = "SELECT * FROM tbl_flower WHERE active='Yes' AND featured='Yes' LIMIT 6";
@@ -112,30 +104,27 @@ include('partials-front/menu.php');
                         } else {
                             ?>
                             <img src="<?php echo SITEURL; ?>images/flower/<?php echo $image_name; ?>" alt="<?php echo $title; ?>"
-                                class="flower-img">
+                                 class="flower-img">
                             <?php
                         }
                         ?>
                         <h3 class="flower-title"><?php echo $title; ?></h3>
                         <p class="flower-price">Rs.<?php echo $price; ?></p>
                         <p class="flower-description"><?php echo $description; ?></p>
-                        <a href="<?php echo SITEURL; ?>order.php?flower_id=<?php echo $id; ?>" class="btn btn-primary">Order
-                            Now</a>
-                        <a href="<?php echo SITEURL; ?>add-to-cart.php?flower_id=<?php echo $id; ?>" class="btn btn-primary">Add
-                            to Cart</a>
+                        <a href="<?php echo SITEURL; ?>order.php?flower_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
+                        <a href="<?php echo SITEURL; ?>add-to-cart.php?flower_id=<?php echo $id; ?>" class="btn btn-primary">Add to Cart</a>
                     </div>
                     <?php
                 }
             } else {
-                echo "<div class='error'>flower not available.</div>";
+                echo "<div class='error'>Flowers not available.</div>";
             }
             ?>
         </div>
         <p class="text-center">
-            <a href="<?php echo SITEURL; ?>flower.php" class="btn btn-primary">See All flowers</a>
+            <a href="<?php echo SITEURL; ?>flower.php" class="btn btn-primary">See All Flowers</a>
         </p>
     </div>
 </section>
-
 
 <?php include('partials-front/footer.php'); ?>
