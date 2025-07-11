@@ -18,13 +18,13 @@ if (!isset($_SESSION['user'])) {
 <div class="dashboard-container">
     <div class="sidebar">
         <div class="logo">
-        <h1>Bite.</h1>
+        <h1>Flowerworld.</h1>
         </div>
         <nav>
             <a href="index.php"><i class="fas fa-home"></i> <span>Dashboard</span></a>
             <a href="manage-admin.php"><i class="fas fa-users-cog"></i> <span>Admin</span></a>
             <a href="manage-category.php" class="active"><i class="fas fa-list"></i> <span>Occasions</span></a>
-            <a href="manage-flower.php"><i class="fas fa-spa"></i> <span>flowers</span></a>
+            <a href="manage-flower.php"><i class="fas fa-spa"></i> <span>Flowers</span></a>
             <a href="manage-order.php"><i class="fas fa-shopping-cart"></i> <span>Order</span></a>
         </nav>
         <div class="sidebar-footer">

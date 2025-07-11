@@ -17,13 +17,13 @@ if (!isset($_SESSION['user'])) {
 <div class="dashboard-container">
     <div class="sidebar">
         <div class="logo">
-            <h1>Bite.</h1>
+            <h1>Flowerworld.</h1>
         </div>
         <nav>
             <a href="index.php"><i class="fas fa-home"></i> <span>Dashboard</span></a>
             <a href="manage-admin.php"><i class="fas fa-users-cog"></i> <span>Admin</span></a>
             <a href="manage-category.php"><i class="fas fa-list"></i> <span>Occasions</span></a>
-            <a href="manage-flower.php" class="active"><i class="fas fa-utensils"></i> <span>flowers</span></a>
+            <a href="manage-flower.php" class="active"><i class="fas fa-spa"></i> <span>Flowers</span></a>
             <a href="manage-order.php"><i class="fas fa-shopping-cart"></i> <span>Order</span></a>
         </nav>
         <div class="sidebar-footer">
@@ -38,7 +38,7 @@ if (!isset($_SESSION['user'])) {
     <div class="main-content">
         <h1 class="dashboard-title">
             <span class="title-icon"><i class="fas fa-plus"></i></span>
-            Add Food
+            Add Flowers
         </h1>
 
         <div id="messagePopup" class="message-popup"></div>
@@ -118,7 +118,7 @@ if (!isset($_SESSION['user'])) {
                 </div>
 
                 <button type="submit" name="submit" class="btn-add-flower">
-                    <i class="fas fa-plus"></i> Add Food
+                    <i class="fas fa-plus"></i> Add Flowers
                 </button>
             </form>
         </div>
