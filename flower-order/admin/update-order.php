@@ -17,7 +17,7 @@ if (!isset($_SESSION['user'])) {
 <div class="dashboard-container">
     <div class="sidebar">
         <div class="logo">
-            <h1>Bite.</h1>
+            <h1>Flowerworld</h1>
         </div>
         <nav>
             <a href="index.php"><i class="fas fa-home"></i> <span>Dashboard</span></a>

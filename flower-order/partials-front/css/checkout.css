@@ -8,7 +8,7 @@ body {
 .container-checkout {
     max-width: 800px;
     margin: 60px auto;
-    background: #fffdfd;
+    background: #fffdfd;   
     padding: 40px;
     border-radius: 16px;
     box-shadow: 0 12px 30px rgba(0,0,0,0.1);
