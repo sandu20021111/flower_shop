@@ -10,7 +10,7 @@
         <div class="footer-content">
             <div class="footer-section about">
                 <h3>Flower world</h3>
-                <p class="about-text">Delivering fresh flowers to your doorstep with passion and precision.</p>
+                <p class="about-text">Delivering fresh flowers to your doorstep<br> with passion and precision.</p>
                 <div class="contact">
                     <span><i class="fas fa-phone"></i> +1 234 567 8900</span>
                     <span><i class="fas fa-envelope"></i> info@FlowerWorld.com</span>
@@ -20,7 +20,7 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="foods.php">Menu</a></li>
+                    <li><a href="flower.php">Bouquets</a></li>
                     <li><a href="contact.php">Contact</a></li>
                     <li><a href="feedback.php">Feedback</a></li>
                 </ul>
@@ -87,7 +87,7 @@
     }
 
     .footer-section h3 {
-        color: #ffd166;
+        color: black;
         font-size: 18px;
         margin-bottom: 15px;
         position: relative;
@@ -100,7 +100,7 @@
         left: 0;
         width: 30px;
         height: 2px;
-        background-color: #ffd166;
+        background-color: #ff6b6b;
     }
 
     .footer-section.about .about-text {
@@ -119,7 +119,7 @@
 
     .footer-section.about .contact i {
         margin-right: 8px;
-        color: #ffd166;
+        color: #ff6b6b;
     }
 
     .footer-section.quick-links ul {
@@ -139,7 +139,7 @@
     }
 
     .footer-section.quick-links ul li a:hover {
-        color: #ffd166;
+        color: #ff6b6b;
         transform: translateX(5px);
     }
 
@@ -174,6 +174,7 @@
         margin-top: 30px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         font-size: 12px;
+        color: #f0f0f0;
     }
 
     @media (max-width: 768px) {

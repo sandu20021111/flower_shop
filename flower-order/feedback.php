@@ -7,7 +7,7 @@ include('partials-front/menu.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedbacks - Bite</title>
+    <title>Feedbacks - Flowerworld</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -38,7 +38,7 @@ include('partials-front/menu.php');
         }
 
         .logo {
-            color: #ffd166;
+            color: rgb(221, 210, 210);
             font-size: 24px;
             font-weight: 700;
             text-decoration: none;
@@ -69,7 +69,7 @@ include('partials-front/menu.php');
 
 
         .feedback-header {
-            background-color: #ffd166;
+            background-color: white;
             color: white;
             text-align: center;
             padding:80px 0 40px;
@@ -78,11 +78,14 @@ include('partials-front/menu.php');
         }
 
         .feedback-header h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin: 0;
             position: relative;
+            margin-top: 30px;
             z-index: 1;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: #807d7f;
+            letter-spacing: 1px;
         }
 
 
@@ -132,7 +135,7 @@ include('partials-front/menu.php');
             border-radius: 50%;
             margin: 0 auto 18px auto;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border: 3px solid #ffd166;
+            border: 3px solid black;
             background: #f3f3f3;
         }
         .review-content {
@@ -203,11 +206,12 @@ include('partials-front/menu.php');
 
 <header class="main-header">
     <div class="header-container">
-        <a href="<?php echo SITEURL; ?>" class="logo">Bite.</a>
+        <a href="<?php echo SITEURL; ?>" class="logo"><img src="images/home/logo1.png" alt="Flowerworld Logo" style="height: 50px; vertical-align: middle;"> Flowerworld
+            </a>
         <nav>
             <ul>
                 <li><a href="<?php echo SITEURL; ?>">Home</a></li>
-                <li><a href="<?php echo SITEURL; ?>categories.php">Categories</a></li>
+                <li><a href="<?php echo SITEURL; ?>categories.php">Occasions</a></li>
                 <li><a href="<?php echo SITEURL; ?>flower.php">Bouquets</a></li>
                 <li><a href="<?php echo SITEURL; ?>contact.php">Contact</a></li>
                 <li><a href="cart.php">🛒 (<?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>)</a></li>
@@ -226,73 +230,70 @@ include('partials-front/menu.php');
     $reviews = [
         [
                 "img" => "imgg/buwanika_anthoney.jpg",
-                "text" => "The mojito received rave reviews for its refreshing taste and perfect balance of mint and lime. Customers loved its sweetness and fresh mint, with minor suggestions for more lime or stronger mint. It was praised as a great drink for hot days.",
-                "name" => "Buwanika Anthony",
+                "text" => "Absolutely beautiful bouquet! The flowers were fresh and the arrangement was stunning. Great for any special occasion.",                "name" => "Buwanika Anthony",
                 "stars" => 4.5
             ],
             [
                 "img" => "imgg/pubudu_chathuranga.jfif",
-                "text" => "The Crispy Chicken Submarine excels with crunchy chicken and balanced flavors. Fresh veggies contrast well with the tangy sauce. Improvements could include softer bread and more sauce for extra flavor.",
-                "name" => "Pubudu Chathuranga",
+                "text" => "The roses were vibrant and fragrant. Delivered on time and exactly as shown on the website.",                "name" => "Pubudu Chathuranga",
                 "stars" => 4.5
             ],
             [
                 "img" => "imgg/anusha_damayanthi.jpg",
-                "text" => "The Signature Seafood Treat Pizza delivers a delicious experience with fresh seafood and a cheese-tomato base. Enhancing it with more seafood variety and a crispier crust would elevate the flavor and texture.",
-                "name" => "Anusha Damayanthi",
+                "text" => "Perfect flowers for my anniversary. The colors were lovely and the packaging was elegant.",                "name" => "Anusha Damayanthi",
                 "stars" => 4
             ],
             [
                 "img" => "imgg/nayanathara_wickramaarachchi.jpg",
-                "text" => "The Classic Hot and Spicy Chicken Pizza impresses with balanced heat and juicy chicken. For improvement, a thicker crust and a cooling drizzle of ranch or blue cheese could enhance the experience.",
+                "text" => "The flower delivery was prompt and the bouquet was gorgeous. The lilies were particularly fresh and fragrant.",
                 "name" => "Nayanathara Wickramaarachchi",
                 "stars" => 5
             ],
             [
                 "img" => "imgg/saranaga_dissasekara.jfif",
-                "text" => "The Cheeseburger offers a satisfying mix of juicy beef, melted cheese, and fresh toppings. Toasting the bun more and adding a signature sauce could enhance texture and flavor, making each bite better.",
+                "text" => "The flower arrangement was stunning and made my birthday extra special. The delivery was on time and the flowers were fresh.",
                 "name" => "Saranga Disasekara",
                 "stars" => 4.5
             ],
             [
                 "img" => "imgg/nethmi_roshel.jpg",
-                "text" => "The Hamburger shines with its classic flavors and balanced ingredients. To improve it, add more seasoning to the patty and offer extras like bacon or avocado for extra variety and richness.",
+                "text" => "Ordered for a graduation gift. Great quality, stylish arrangement, and timely delivery!",
                 "name" => "Nethmi Roshel",
                 "stars" => 5
             ],
             [
                 "img" => "imgg/akila_danuddara.jfif",
-                "text" => "The Beef Submarine is hearty and satisfying, featuring tender, well-seasoned beef. To enhance it, add a touch more seasoning or a complementary sauce to boost the beef’s richness and flavor.",
+                "text" => "The sympathy flowers were elegant and respectful. Could use more fragrance though.",
                 "name" => "Akila Dhanuddara",
                 "stars" => 3.5
             ],
             [
                 "img" => "imgg/shanudri_priyasad.jpg",
-                "text" => "The Classic Hot and Spicy Chicken Pizza excels with balanced spiciness and juicy chicken. To improve, try a thicker crust for better support and add a cooling ranch or blue cheese drizzle.",
+                "text" => "Loved the mixed bouquet for Mother's Birthday. Fresh lilies and roses were a wonderful combo.",
                 "name" => "Shanudri Priyasad",
                 "stars" => 4.5
             ],
             [
                 "img" => "imgg/WhatsApp Image 2024-08-06 at 11.04.23.jpeg",
-                "text" => "The Shallow Fried Prawn Momos are delightful with succulent prawns and a crispy texture. To improve, add more spice or seasoning to the filling and offer a zesty dipping sauce for enhancement.",
+                "text" => "Impressed by the exotic flower arrangement. The orchids were fresh and lasted long. Perfect for my sister's birthday.",
                 "name" => "Sonali Jayakodi",
                 "stars" => 4.5
             ],
             [
                 "img" => "imgg/WhatsApp Image 2024-08-06 at 11.37.32.jpeg",
-                "text" => "The Wok Fried Chicken Momos shine with tender chicken and a crispy exterior. To enhance them, add more wok flavor with stir-fried veggies or a robust sauce for a deeper, more complex taste.",
+                "text" => "Gorgeous floral basket for a housewarming gift. Loved the combination of colors and scents.",
                 "name" => "Inuka Mapa",
                 "stars" => 4.5
             ],
             [
                 "img" => "imgg/WhatsApp Image 2024-06-01 at 15.34.39.jpeg",
-                "text" => "The mac and cheese submarine is rich, creamy, and indulgent, with a great mix of textures and appealing presentation. Generous portion size, with potential for additional toppings and a half-size option.",
+                "text" => "Macarons and flower combo was creative and delightful. Great presentation and fresh blooms.",
                 "name" => "Sashika Dilmina",
                 "stars" => 5
             ],
             [
                 "img" => "imgg/dilmin_ekanayake.png",
-                "text" => "The delight chili chicken pizza combines spicy, savory flavors with a crispy crust and tender toppings. Visually vibrant and well-portioned, it’s a satisfying meal, enhanced by fresh vegetables and melted cheese.",
+                "text" => "Bright and cheerful flower box with fresh tulips and carnations. Perfect for a thank you gift!",
                 "name" => "Dilmin Ekanayaka",
                 "stars" => 5
             ]

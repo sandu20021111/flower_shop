@@ -6,7 +6,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color:white;
+    background: linear-gradient(135deg, #ffeaea 0%, #ffffff 100%);
 }
 
 .container {
@@ -48,10 +48,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     margin-left: -8px;
-    
-    
-  
-    
+
 }
 
 .logo i {
@@ -64,7 +61,7 @@ body {
 .logo {
      font-size: 1.8rem;
     font-weight: 700;
-    color: white;
+    color: rgb(221, 210, 210);
     margin: 0;
     display: flex;
     align-items: center;
@@ -99,7 +96,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ffd166;
+    color: #f02397;
     background-color: rgba(255, 255, 255, 0.1);
 }
 /* Cart Link */
@@ -380,12 +377,12 @@ nav a[href="cart.php"]:hover {
 
        /* add color for section */
        #categories{
-        background: linear-gradient #f7e3f0 ;
+        background: linear-gradient(135deg, #ffeaea 0%, #ffffff 100%);
 
 
        }
        #menu{
-       background: linear-gradient #f7e3f0;
+       background: linear-gradient(135deg, #ffeaea 0%, #ffffff 100%);
 
 
 
@@ -458,7 +455,7 @@ nav a[href="cart.php"]:hover {
 }
 
 .flower-item {
-    background-color: white;
+    background: linear-gradient(135deg, #ffeaea 0%, #ffffff 100%);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -504,6 +501,7 @@ nav a[href="cart.php"]:hover {
     transition: background-color 0.3s ease;
     font-weight: 600;
     font-size: 14px;
+    text-align: center;
 }
 
 .btn:hover {
@@ -518,7 +516,7 @@ nav a[href="cart.php"]:hover {
 /* Categories Section */
 .categories {
     padding: 80px 0;
-    background-color: #f9f9f9;
+    background: linear-gradient(135deg, #ffeaea 0%, #ffffff 100%);
 }
 
 .section-title {
@@ -596,9 +594,9 @@ nav a[href="cart.php"]:hover {
     text-decoration: none;
 }
 
-/* Food Search Section */
+/* flower Search Section */
 .flower-search {
-    background-color: #f9f9f9;
+    background: linear-gradient(135deg, #ffeaea 0%, #ffffff 100%);
     padding: 60px 0;
 }
 
@@ -632,9 +630,9 @@ nav a[href="cart.php"]:hover {
     background-color: #ff5252;
 }
 
-/* Trending Foods Section */
-.trending-foods {
-    background-color: #fff;
+/* Trending flower Section */
+.trending-flower {
+    background: linear-gradient(135deg, #ffeaea 0%, #ffffff 100%);
 }
 
 .trending-grid {
@@ -674,10 +672,10 @@ nav a[href="cart.php"]:hover {
     font-weight: 600;
 }
 
-/* Food Menu Section */
+/* flower Menu Section */
 .flower-menu {
     padding: 10px 0;
-    background-color: #f9f9f9;
+    background: linear-gradient(135deg, #ffeaea 0%, #ffffff 100%);
 }
 
 .menu-grid {
@@ -736,6 +734,7 @@ nav a[href="cart.php"]:hover {
     transition: background-color 0.3s ease;
     font-weight: 600;
     font-size: 14px;
+    text-align: center;
 }
 
 .btn:hover {
@@ -1003,10 +1002,10 @@ nav a[href="cart.php"]:hover {
     background-color: #ff5252;
 }
 
-/* Food Search Styles */
+/* flower Search Styles */
 
 .flower-search {
-    background-color: #f9f9f9;
+    background: linear-gradient(135deg, #ffeaea 0%, #ffffff 100%);
     padding: 60px 0;
     text-align: center;
 }

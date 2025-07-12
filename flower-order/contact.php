@@ -259,16 +259,17 @@ textarea {
 <header class="main-header">
     <div class="container header-container">
         <div class="logo-container">
-            <h1 class="logo">Bite.</h1>
+            <h1 class="logo">
+                 <img src="images/home/logo1.png" alt="Flowerworld Logo" style="height: 50px; vertical-align: middle;"> Flowerworld
+            </h1>
         </div>
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="categories.php">Categories</a></li>
+                <li><a href="categories.php">Occasions</a></li>
                 <li><a href="flower.php">Bouquets</a></li>
                 <li><a href="contact.php">Contact</a></li>
                 <li><a href="cart.php">🛒 (<?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>)</a></li>
-
             </ul>
         </nav>
     </div>
@@ -282,8 +283,8 @@ textarea {
         </div>
         <div class="contact-details">
             <p><i class="fa fa-phone"></i> +94 111 222 555</p>
-            <p><i class="fa fa-envelope"></i> Bite@gmail.com</p>
-            <p><i class="fa fa-map-marker"></i> 77 A2, Malabe, Colombo</p>
+            <p><i class="fa fa-envelope"></i> info@FlowerWorld.com</p>
+            <p><i class="fa fa-map-marker"></i> 77 A2, Sri Jayawardenepura Kotte, Colombo</p>
         </div>
         <div class="social-icons">
             <a href="#"><i class="fab fa-facebook-f"></i></a>

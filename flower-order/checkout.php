@@ -60,14 +60,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container header-container">
         <div class="logo-container">
             <h1 class="logo">
-                <i class="fas fa-spa"></i> Flowerworld.
+                 <img src="images/home/logo1.png" alt="Flowerworld Logo" style="height: 50px; vertical-align: middle;"> Flowerworld
             </h1>
         </div>
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="categories.php">Categories</a></li>
-                <li><a href="flower.php">Menu</a></li>
+                <li><a href="categories.php">Occasions</a></li>
+                <li><a href="flower.php">Bouquets</a></li>
                 <li><a href="contact.php">Contact</a></li>
                 <li><a href="cart.php">🛒 (<?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>)</a></li>
             </ul>
