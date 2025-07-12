@@ -23,7 +23,7 @@ if (!isset($_SESSION['user'])) {
             <a href="index.php"><i class="fas fa-home"></i> <span>Dashboard</span></a>
             <a href="manage-admin.php"><i class="fas fa-users-cog"></i> <span>Admin</span></a>
             <a href="manage-category.php"><i class="fas fa-list"></i> <span>Occasions</span></a>
-            <a href="manage-flower.php"><i class="fas fa-utensils"></i> <span>Folowers</span></a>
+            <a href="manage-flower.php"><i class="fas fa-spa"></i> <span>Flowers</span></a>
             <a href="manage-order.php" class="active"><i class="fas fa-shopping-cart"></i> <span>Order</span></a>
         </nav>
         <div class="sidebar-footer">
