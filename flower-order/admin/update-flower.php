@@ -71,7 +71,7 @@ if (!isset($_SESSION['user'])) {
                     <label for="title">Title</label>
                     <div class="input-group">
                         <input type="text" id="title" name="title" value="<?php echo $title; ?>" required>
-                        <i class="fas fa-utensils"></i>
+                        <i class="fas fa-spa"></i>
                     </div>
                 </div>
 

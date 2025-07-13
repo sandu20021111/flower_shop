@@ -80,7 +80,7 @@ if (!isset($_SESSION['user'])) {
                     <label for="flower">flower Name</label>
                     <div class="input-group">
                         <input type="text" id="flower" name="flower" value="<?php echo $flower; ?>" readonly>
-                        <i class="fas fa-utensils"></i>
+                        <i class="fas fa-spa"></i>
                     </div>
                 </div>
 

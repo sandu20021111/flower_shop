@@ -245,19 +245,19 @@ include('partials-front/menu.php');
             ],
             [
                 "img" => "imgg/nayanathara_wickramaarachchi.jpg",
-                "text" => "The flower delivery was prompt and the bouquet was gorgeous. The lilies were particularly fresh and fragrant.",
+                "text" => "The Classic Hot and Spicy Chicken Pizza impresses with balanced heat and juicy chicken. For improvement, a thicker crust and a cooling drizzle of ranch or blue cheese could enhance the experience.",
                 "name" => "Nayanathara Wickramaarachchi",
                 "stars" => 5
             ],
             [
                 "img" => "imgg/saranaga_dissasekara.jfif",
-                "text" => "The flower arrangement was stunning and made my birthday extra special. The delivery was on time and the flowers were fresh.",
+                "text" => "The Cheeseburger offers a satisfying mix of juicy beef, melted cheese, and fresh toppings. Toasting the bun more and adding a signature sauce could enhance texture and flavor, making each bite better.",
                 "name" => "Saranga Disasekara",
                 "stars" => 4.5
             ],
             [
                 "img" => "imgg/nethmi_roshel.jpg",
-                "text" => "Ordered for a graduation gift. Great quality, stylish arrangement, and timely delivery!",
+                "text" => "The Hamburger shines with its classic flavors and balanced ingredients. To improve it, add more seasoning to the patty and offer extras like bacon or avocado for extra variety and richness.",
                 "name" => "Nethmi Roshel",
                 "stars" => 5
             ],
