@@ -58,7 +58,7 @@ if(!empty($search)) {
             <div class="search-info">
                 <span class="search-term">"<?php echo htmlspecialchars($search); ?>"</span>
                 <span class="search-count"><?php echo $count; ?></span>
-                <span class="search-count-text"><?php echo $count != 1 ? 'results' : 'result'; ?> found</span>
+                <span class="search-count-text"><?php echo $count != 1 ? 'results' : 'result'; ?>found</span>
             </div>
         </div>
     </div>

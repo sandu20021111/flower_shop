@@ -48,7 +48,18 @@ $cart_count = mysqli_num_rows($res);
             while ($row = mysqli_fetch_assoc($res)):
                 $item_total = $row['price'] * $row['qty'];
                 $grand_total += $item_total;
-                $image_path = !empty($row['image_name']) ? SITEURL . "images/flower/" . $row['image_name'] : SITEURL . "images/flower/placeholder.jpg";
+                // Try to get image_name from tbl_flower if not present in tbl_cart
+                $image_name = $row['image_name'];
+                if (empty($image_name)) {
+                    $fid = intval($row['flower_id']);
+                    $img_res = mysqli_query($conn, "SELECT image_name FROM tbl_flower WHERE id = $fid LIMIT 1");
+                    if ($img_res && mysqli_num_rows($img_res) > 0) {
+                        $img_row = mysqli_fetch_assoc($img_res);
+                        $image_name = $img_row['image_name'];
+                    }
+                }
+                $image_file = !empty($image_name) && file_exists("images/flower/" . $image_name) ? $image_name : 'placeholder.jpg';
+                $image_path = SITEURL . "images/flower/" . $image_file;
             ?>
                 <div class="cart-item">
                     <div class="item-image">

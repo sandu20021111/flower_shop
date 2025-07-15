@@ -48,7 +48,7 @@ if(isset($_SESSION['no-login-message']))
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login - Bite. Food Order System</title>
+    <title>Admin Login - FlowerWorld. Flower Order System</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -278,7 +278,7 @@ if(isset($_SESSION['no-login-message']))
         <span></span>
     </div>
     <div class="login-container">
-        <i class="fas fa-utensils login-icon"></i>
+        <img src="../images/home/logo1.png" alt="Flowerworld Logo" style="height: 60px; vertical-align: middle;"><br><br>
         <h1>Admin Login</h1>
         <?php 
             if($login_message != '') {
