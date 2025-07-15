@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2025 at 09:51 AM
+-- Generation Time: Jul 15, 2025 at 08:54 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -64,7 +64,9 @@ CREATE TABLE `tbl_cart` (
 --
 
 INSERT INTO `tbl_cart` (`id`, `flower_id`, `flower_name`, `price`, `qty`, `user_session`, `added_date`, `image_name`) VALUES
-(32, 15, 'Red Rose', 700.00, 1, 'kbp79cb9fpukpldkgrqblg9c9s', '2025-07-14 23:14:52', NULL);
+(32, 15, 'Red Rose', 700.00, 1, 'kbp79cb9fpukpldkgrqblg9c9s', '2025-07-14 23:14:52', NULL),
+(39, 13, 'Lily', 850.00, 2, '2neun3le3r6fp3dg4bp8877fhu', '2025-07-15 19:43:45', NULL),
+(40, 4, 'Orchid', 5000.00, 2, '2neun3le3r6fp3dg4bp8877fhu', '2025-07-16 00:14:46', NULL);
 
 -- --------------------------------------------------------
 
@@ -95,6 +97,32 @@ INSERT INTO `tbl_category` (`id`, `title`, `image_name`, `featured`, `active`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_feedback`
+--
+
+CREATE TABLE `tbl_feedback` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `stars` float NOT NULL,
+  `text` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `image` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_feedback`
+--
+
+INSERT INTO `tbl_feedback` (`id`, `name`, `stars`, `text`, `created_at`, `image`) VALUES
+(5, 'Buwanika Anthony', 4, 'Absolutely beautiful bouquet! The flowers were fresh and the arrangement was stunning. Great for any special occasion.', '2025-07-15 18:32:22', '1752604342_buwanika_anthoney.jpg'),
+(6, 'Pubudu Chathuranga', 4, 'The roses were vibrant and fragrant. Delivered on time and exactly as shown on the website.', '2025-07-15 18:32:59', '1752604379_pubudu_chathuranga.jfif'),
+(7, 'Anusha Damayanthi', 5, 'Perfect flowers for my anniversary. The colors were lovely and the packaging was elegant.', '2025-07-15 18:34:50', '1752604490_anusha_damayanthi.jpg'),
+(8, 'Akila Dhanuddara', 3, 'The sympathy flowers were elegant and respectful. Could use more fragrance though.', '2025-07-15 18:35:32', '1752604532_akila_danuddara.jfif'),
+(9, 'Shanudri Priyasad', 5, 'Impressed by the exotic flower arrangement. The orchids were fresh and lasted long.', '2025-07-15 18:36:19', '1752604579_shanudri_priyasad.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_flower`
 --
 
@@ -114,23 +142,22 @@ CREATE TABLE `tbl_flower` (
 --
 
 INSERT INTO `tbl_flower` (`id`, `title`, `description`, `price`, `image_name`, `category_id`, `featured`, `active`) VALUES
-(2, 'Orchid', 'Exotic and delicate, orchids symbolize beauty, strength, and luxury. They’re often used in elegant floral arrangements', 200.00, 'Flower-Name-724.jpg', 22, 'Yes', 'Yes'),
-(3, 'Lily', 'Elegant and fragrant, lilies represent purity and renewal. They come in many colors, each with its own meaning.', 150.00, 'Flower-Name-9961.jpg', 22, 'Yes', 'Yes'),
-(4, 'Orchid', 'Exotic and delicate, orchids symbolize beauty, strength, and luxury. They’re often used in elegant floral arrangements.', 200.00, 'Flower-Name-1934.jpg', 22, 'Yes', 'Yes'),
-(5, 'Peonies', 'Full and lush, peonies stand for romance, prosperity, and good fortune. They bloom beautifully in spring.', 300.00, 'Flower-Name-787.jpg', 22, 'Yes', 'Yes'),
-(6, 'Carnation', 'Known for their ruffled petals and sweet fragrance, carnations symbolize love and admiration.', 200.00, 'Flower-Name-4532.png', 25, 'Yes', 'Yes'),
-(7, 'Gerberas', 'Bright and cheerful flowers that come in many colors, gerberas represent happiness and innocence.', 350.00, 'Flower-Name-8121.jpg', 25, 'Yes', 'Yes'),
-(8, 'Sunflower', 'With large yellow petals and a bold center, sunflowers symbolize warmth, positivity, and loyalty.', 700.00, 'Flower-Name-549.jpg', 25, 'Yes', 'Yes'),
-(9, 'Daisies', 'Simple and cheerful flowers with white petals and a yellow center, symbolizing purity and innocence.', 800.00, 'Flower-Name-3070.jpg', 24, 'Yes', 'Yes'),
-(10, 'Sunflower', 'Large yellow flowers that follow the sun, symbolizing warmth, positivity, and loyalty.', 700.00, 'Flower-Name-182.jpg', 24, 'Yes', 'Yes'),
-(11, 'Gerberas', 'Bright and bold daisy-like flowers, known for their large blooms and variety of colors, symbolizing happiness.', 900.00, 'Flower-Name-2362.jpg', 24, 'Yes', 'Yes'),
-(12, 'Heart Shape Mix Bouquet', 'A romantic arrangement of various colorful flowers shaped like a heart, symbolizing love and affection.', 1500.00, 'Flower-Name-586.jpg', 26, 'Yes', 'Yes'),
-(13, 'Lily', 'Elegant, trumpet-shaped flowers that symbolize purity and renewal, available in white, pink, and orange shades.', 850.00, 'Flower-Name-1136.jpg', 26, 'Yes', 'Yes'),
-(14, 'Tulip', 'Bright, cup-shaped flowers that come in many colors, symbolizing perfect love and springtime joy.', 700.00, 'Flower-Name-9745.jpg', 26, 'Yes', 'Yes'),
-(15, 'Red Rose', 'Classic symbol of deep love and passion, often given on romantic occasions.', 700.00, 'Flower-Name-5505.jpg', 26, 'Yes', 'Yes'),
-(16, 'Calla Lily', 'Elegant, trumpet-shaped flowers known for their smooth curves and classic beauty.', 900.00, 'Flower-Name-3081.jpg', 23, 'Yes', 'Yes'),
-(17, 'Daisies', 'Simple and cheerful flowers with white petals and a yellow center, symbolizing innocence.', 850.00, 'Flower-Name-7135.jpg', 23, 'Yes', 'Yes'),
-(18, 'Gypsophila', 'Also known as baby’s breath, these tiny white blooms are delicate and airy, often used as filler.', 750.00, 'Flower-Name-6028.jpg', 23, 'Yes', 'Yes');
+(3, 'Lily', 'Elegant and fragrant, lilies represent purity and renewal. They come in many colors, each with its own meaning.', 20000.00, 'Flower-Name-9961.jpg', 22, 'Yes', 'Yes'),
+(4, 'Orchid', 'Exotic and delicate, orchids symbolize beauty, strength, and luxury. They’re often used in elegant floral arrangements.', 5000.00, 'Flower-Name-1934.jpg', 22, 'Yes', 'Yes'),
+(5, 'Peonies', 'Full and lush, peonies stand for romance, prosperity, and good fortune. They bloom beautifully in spring.', 3000.00, 'Flower-Name-787.jpg', 22, 'Yes', 'Yes'),
+(6, 'Carnation', 'Known for their ruffled petals and sweet fragrance, carnations symbolize love and admiration.', 8000.00, 'Flower-Name-4532.png', 25, 'Yes', 'Yes'),
+(7, 'Gerberas', 'Bright and cheerful flowers that come in many colors, gerberas represent happiness and innocence.', 13500.00, 'Flower-Name-8121.jpg', 25, 'Yes', 'Yes'),
+(8, 'Sunflower', 'With large yellow petals and a bold center, sunflowers symbolize warmth, positivity, and loyalty.', 5000.00, 'Flower-Name-549.jpg', 25, 'Yes', 'Yes'),
+(9, 'Daisies', 'Simple and cheerful flowers with white petals and a yellow center, symbolizing purity and innocence.', 6500.00, 'Flower-Name-3070.jpg', 24, 'Yes', 'Yes'),
+(10, 'Sunflower', 'Large yellow flowers that follow the sun, symbolizing warmth, positivity, and loyalty.', 7500.00, 'Flower-Name-182.jpg', 24, 'Yes', 'Yes'),
+(11, 'Gerberas', 'Bright and bold daisy-like flowers, known for their large blooms and variety of colors, symbolizing happiness.', 19500.00, 'Flower-Name-2362.jpg', 24, 'Yes', 'Yes'),
+(12, 'Heart Shape Mix Bouquet', 'A romantic arrangement of various colorful flowers shaped like a heart, symbolizing love and affection.', 15000.00, 'Flower-Name-586.jpg', 26, '', 'Yes'),
+(13, 'Lily', 'Elegant, trumpet-shaped flowers that symbolize purity and renewal, available in white, pink, and orange shades.', 8050.00, 'Flower-Name-1136.jpg', 26, '', 'Yes'),
+(14, 'Tulip', 'Bright, cup-shaped flowers that come in many colors, symbolizing perfect love and springtime joy.', 7000.00, 'Flower-Name-9745.jpg', 26, '', 'Yes'),
+(15, 'Red Rose', 'Classic symbol of deep love and passion, often given on romantic occasions.', 25000.00, 'Flower-Name-5505.jpg', 26, '', 'Yes'),
+(16, 'Calla Lily', 'Elegant, trumpet-shaped flowers known for their smooth curves and classic beauty.', 29500.00, 'Flower-Name-3081.jpg', 23, '', 'Yes'),
+(17, 'Daisies', 'Simple and cheerful flowers with white petals and a yellow center, symbolizing innocence.', 8500.00, 'Flower-Name-7135.jpg', 23, '', 'Yes'),
+(18, 'Gypsophila', 'Also known as baby’s breath, these tiny white blooms are delicate and airy, often used as filler.', 7500.00, 'Flower-Name-6028.jpg', 23, 'Yes', 'Yes');
 
 -- --------------------------------------------------------
 
@@ -187,6 +214,12 @@ ALTER TABLE `tbl_category`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_feedback`
+--
+ALTER TABLE `tbl_feedback`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_flower`
 --
 ALTER TABLE `tbl_flower`
@@ -212,13 +245,19 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT for table `tbl_feedback`
+--
+ALTER TABLE `tbl_feedback`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_flower`

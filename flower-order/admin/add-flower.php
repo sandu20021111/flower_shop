@@ -20,11 +20,12 @@ if (!isset($_SESSION['user'])) {
             <h1>Flowerworld</h1>
         </div>
         <nav>
-            <a href="index.php"><i class="fas fa-home"></i> <span>Dashboard</span></a>
+            <a href="index.php" class="active"><i class="fas fa-home"></i> <span>Dashboard</span></a>
             <a href="manage-admin.php"><i class="fas fa-users-cog"></i> <span>Admin</span></a>
-            <a href="manage-category.php"><i class="fas fa-list"></i> <span>Occasions</span></a>
-            <a href="manage-flower.php" class="active"><i class="fas fa-spa"></i> <span>Flowers</span></a>
+            <a href="manage-category.php"><i class="fas fa-gift"></i> <span>Occasions</span></a>
+            <a href="manage-flower.php"><i class="fas fa-spa"></i> <span>Flowers</span></a>
             <a href="manage-order.php"><i class="fas fa-shopping-cart"></i> <span>Order</span></a>
+            <a href="manage-feedback.php"><i class="fas fa-comments"></i> <span>Feedback</span></a>
         </nav>
         <div class="sidebar-footer">
             <div class="user-profile">
@@ -100,14 +101,15 @@ if (!isset($_SESSION['user'])) {
                         <i class="fas fa-list"></i>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label>Featured</label>
+                
+                  <div class="form-group">
+                    <label>Feactured</label>
                     <div class="radio-group">
-                        <label><input type="radio" name="featured" value="Yes"> Yes</label>
-                        <label><input type="radio" name="featured" value="No" checked> No</label>
+                        <label><input type="radio" name="active" value="Yes" checked> Yes</label>
+                        <label><input type="radio" name="active" value="No"> No</label>
                     </div>
                 </div>
+
 
                 <div class="form-group">
                     <label>Active</label>
@@ -414,7 +416,7 @@ if(isset($_POST['submit']))
     $description = mysqli_real_escape_string($conn, $_POST['description']);
     $price = $_POST['price'];
     $category = $_POST['category'];
-    $featured = $_POST['featured'];
+
     $active = $_POST['active'];
 
     if(isset($_FILES['image']['name']))
@@ -446,7 +448,7 @@ if(isset($_POST['submit']))
         price = $price,
         image_name = '$image_name',
         category_id = $category,
-        featured = '$featured',
+
         active = '$active'
     ";
 

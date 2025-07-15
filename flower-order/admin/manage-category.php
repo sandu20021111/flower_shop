@@ -21,11 +21,12 @@ if (!isset($_SESSION['user'])) {
         <h1>Flowerworld</h1>
         </div>
         <nav>
-            <a href="index.php"><i class="fas fa-home"></i> <span>Dashboard</span></a>
+            <a href="index.php" class="active"><i class="fas fa-home"></i> <span>Dashboard</span></a>
             <a href="manage-admin.php"><i class="fas fa-users-cog"></i> <span>Admin</span></a>
-            <a href="manage-category.php" class="active"><i class="fas fa-list"></i> <span>Occasions</span></a>
+            <a href="manage-category.php"><i class="fas fa-gift"></i> <span>Occasions</span></a>
             <a href="manage-flower.php"><i class="fas fa-spa"></i> <span>Flowers</span></a>
             <a href="manage-order.php"><i class="fas fa-shopping-cart"></i> <span>Order</span></a>
+            <a href="manage-feedback.php"><i class="fas fa-comments"></i> <span>Feedback</span></a>
         </nav>
         <div class="sidebar-footer">
             <div class="user-profile">
@@ -131,9 +132,6 @@ if (!isset($_SESSION['user'])) {
                                 <div class="category-info">
                                     <h3><?php echo $title; ?></h3>
                                     <p>
-                                        <span class="badge <?php echo $featured == 'Yes' ? 'badge-featured' : ''; ?>">
-                                            <?php echo $featured == 'Yes' ? 'Featured' : 'Not Featured'; ?>
-                                        </span>
                                         <span class="badge <?php echo $active == 'Yes' ? 'badge-active' : ''; ?>">
                                             <?php echo $active == 'Yes' ? 'Active' : 'Inactive'; ?>
                                         </span>

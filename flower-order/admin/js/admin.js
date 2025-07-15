@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });  
+    
+
 
     // Add animation for the "Add Admin" button
     const addAdminBtn = document.getElementById('addadmin-btn');

@@ -120,8 +120,8 @@ include('partials-front/menu.php');
             }
             ?>
         </div>
-        <p class="text-center">
-            <a href="<?php echo SITEURL; ?>flower.php" class="btn btn-primary">See All Flowers</a>
+        <p style="text-align:center;">
+            <a href="<?php echo SITEURL; ?>flower.php" class="btn btn-primary" style="display:inline-block;">See All Flowers</a>
         </p>
     </div>
 </section>

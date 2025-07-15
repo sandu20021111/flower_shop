@@ -1,5 +1,6 @@
 <?php 
 include('partials-front/menu.php');
+include('config/constants.php');
 ?>
 
 <!DOCTYPE html>
@@ -64,45 +65,21 @@ include('partials-front/menu.php');
         }
 
         nav ul li a:hover {
-            color: #ffd166;
+            color: #f02397;
         }
-
 
         .feedback-header {
             background-color: white;
-            color: white;
             text-align: center;
             padding:80px 0 40px;
-            position: relative;
-            overflow: hidden;
+            margin-top: 60px;
         }
 
         .feedback-header h1 {
             font-size: 3rem;
             margin: 0;
-            position: relative;
-            margin-top: 30px;
-            z-index: 1;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             color: #807d7f;
             letter-spacing: 1px;
-        }
-
-
-        .feedback-header::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
 
         .review-container {
@@ -120,7 +97,6 @@ include('partials-front/menu.php');
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
             display: flex;
             flex-direction: column;
         }
@@ -128,16 +104,12 @@ include('partials-front/menu.php');
         .review-image {
             width: 100px;
             height: 100px;
-            aspect-ratio: 1/1;
             object-fit: cover;
-            object-position: center;
-            display: block;
             border-radius: 50%;
             margin: 0 auto 18px auto;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             border: 3px solid black;
-            background: #f3f3f3;
         }
+
         .review-content {
             padding: 0 20px 20px 20px;
             text-align: center;
@@ -147,7 +119,6 @@ include('partials-front/menu.php');
             font-size: 0.9rem;
             color: #555;
             margin-bottom: 15px;
-            line-height: 1.6;
             position: relative;
             padding-left: 25px;
         }
@@ -161,16 +132,6 @@ include('partials-front/menu.php');
             top: -20px;
         }
 
-        .review-text::after {
-    content: '\201D';
-    font-size: 3rem;
-    color: #ff6b6b;
-    position: absolute;
-    right: -10px;
-    bottom: -40px;
-}
-
-
         .review-name {
             font-weight: 600;
             color: #333;
@@ -182,22 +143,80 @@ include('partials-front/menu.php');
             font-size: 1.2rem;
         }
 
+        .feedback-float-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #f02397;
+            color: white;
+            border: none;
+            padding: 20px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .feedback-modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 8% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            color: #999;
+            cursor: pointer;
+        }
+
+        .feedback-form input,
+        .feedback-form select,
+        .feedback-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .feedback-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #f02397;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
         @media (max-width: 768px) {
             .review-container {
                 grid-template-columns: 1fr;
-            }
-            
-            .header-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav ul {
-                margin-top: 20px;
-            }
-
-            nav ul li {
-                margin: 0 10px;
             }
         }
     </style>
@@ -206,15 +225,14 @@ include('partials-front/menu.php');
 
 <header class="main-header">
     <div class="header-container">
-        <a href="<?php echo SITEURL; ?>" class="logo"><img src="images/home/logo1.png" alt="Flowerworld Logo" style="height: 50px; vertical-align: middle;"> Flowerworld
-            </a>
+        <a href="<?php echo SITEURL; ?>" class="logo"><img src="images/home/logo1.png" alt="Flowerworld Logo" style="height: 50px;"> Flowerworld</a>
         <nav>
             <ul>
                 <li><a href="<?php echo SITEURL; ?>">Home</a></li>
                 <li><a href="<?php echo SITEURL; ?>categories.php">Occasions</a></li>
                 <li><a href="<?php echo SITEURL; ?>flower.php">Bouquets</a></li>
                 <li><a href="<?php echo SITEURL; ?>contact.php">Contact</a></li>
-                <li><a href="cart.php">🛒 (<?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>)</a></li>
+                <li><a href="cart.php">🛒</a></li>
             </ul>
         </nav>
     </div>
@@ -224,129 +242,66 @@ include('partials-front/menu.php');
     <h1>What Our Customers Say</h1>
 </div>
 
-
 <div class="review-container">
-<?php
-    $reviews = [
-        [
-                "img" => "imgg/buwanika_anthoney.jpg",
-                "text" => "Absolutely beautiful bouquet! The flowers were fresh and the arrangement was stunning. Great for any special occasion.",                "name" => "Buwanika Anthony",
-                "stars" => 4.5
-            ],
-            [
-                "img" => "imgg/pubudu_chathuranga.jfif",
-                "text" => "The roses were vibrant and fragrant. Delivered on time and exactly as shown on the website.",                "name" => "Pubudu Chathuranga",
-                "stars" => 4.5
-            ],
-            [
-                "img" => "imgg/anusha_damayanthi.jpg",
-                "text" => "Perfect flowers for my anniversary. The colors were lovely and the packaging was elegant.",                "name" => "Anusha Damayanthi",
-                "stars" => 4
-            ],
-            [
-                "img" => "imgg/nayanathara_wickramaarachchi.jpg",
-                "text" => "The Classic Hot and Spicy Chicken Pizza impresses with balanced heat and juicy chicken. For improvement, a thicker crust and a cooling drizzle of ranch or blue cheese could enhance the experience.",
-                "name" => "Nayanathara Wickramaarachchi",
-                "stars" => 5
-            ],
-            [
-                "img" => "imgg/saranaga_dissasekara.jfif",
-                "text" => "The Cheeseburger offers a satisfying mix of juicy beef, melted cheese, and fresh toppings. Toasting the bun more and adding a signature sauce could enhance texture and flavor, making each bite better.",
-                "name" => "Saranga Disasekara",
-                "stars" => 4.5
-            ],
-            [
-                "img" => "imgg/nethmi_roshel.jpg",
-                "text" => "The Hamburger shines with its classic flavors and balanced ingredients. To improve it, add more seasoning to the patty and offer extras like bacon or avocado for extra variety and richness.",
-                "name" => "Nethmi Roshel",
-                "stars" => 5
-            ],
-            [
-                "img" => "imgg/akila_danuddara.jfif",
-                "text" => "The sympathy flowers were elegant and respectful. Could use more fragrance though.",
-                "name" => "Akila Dhanuddara",
-                "stars" => 3.5
-            ],
-            [
-                "img" => "imgg/shanudri_priyasad.jpg",
-                "text" => "Loved the mixed bouquet for Mother's Birthday. Fresh lilies and roses were a wonderful combo.",
-                "name" => "Shanudri Priyasad",
-                "stars" => 4.5
-            ],
-            [
-                "img" => "imgg/WhatsApp Image 2024-08-06 at 11.04.23.jpeg",
-                "text" => "Impressed by the exotic flower arrangement. The orchids were fresh and lasted long. Perfect for my sister's birthday.",
-                "name" => "Sonali Jayakodi",
-                "stars" => 4.5
-            ],
-            [
-                "img" => "imgg/WhatsApp Image 2024-08-06 at 11.37.32.jpeg",
-                "text" => "Gorgeous floral basket for a housewarming gift. Loved the combination of colors and scents.",
-                "name" => "Inuka Mapa",
-                "stars" => 4.5
-            ],
-            [
-                "img" => "imgg/WhatsApp Image 2024-06-01 at 15.34.39.jpeg",
-                "text" => "Macarons and flower combo was creative and delightful. Great presentation and fresh blooms.",
-                "name" => "Sashika Dilmina",
-                "stars" => 5
-            ],
-            [
-                "img" => "imgg/dilmin_ekanayake.png",
-                "text" => "Bright and cheerful flower box with fresh tulips and carnations. Perfect for a thank you gift!",
-                "name" => "Dilmin Ekanayaka",
-                "stars" => 5
-            ]
-    ];
-
-    foreach ($reviews as $review) {
-        echo '<div class="review-card">';
-        echo '<div class="review-image-wrapper"><img src="' . $review['img'] . '" alt="' . $review['name'] . '" class="review-image"></div>';
-        echo '<div class="review-content">';
-        echo '<p class="review-text">' . $review['text'] . '</p>';
-        echo '<h3 class="review-name">' . $review['name'] . '</h3>';
-        echo '<div class="review-stars">';
-        for ($i = 0; $i < floor($review['stars']); $i++) {
-            echo '<i class="fas fa-star"></i>';
+    <?php
+    $sql = "SELECT * FROM tbl_feedback ORDER BY id DESC";
+    $res = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($res) > 0) {
+        while ($row = mysqli_fetch_assoc($res)) {
+            $img = !empty($row['image']) ? 'uploads/' . $row['image'] : 'images/default-user.png';
+            echo '<div class="review-card">';
+            echo '<img src="' . $img . '" alt="User" class="review-image">';
+            echo '<div class="review-content">';
+            echo '<p class="review-text">' . htmlspecialchars($row['text']) . '</p>';
+            echo '<h3 class="review-name">' . htmlspecialchars($row['name']) . '</h3>';
+            echo '<div class="review-stars">';
+            for ($i = 0; $i < floor($row['stars']); $i++) {
+                echo '<i class="fas fa-star"></i>';
+            }
+            if ($row['stars'] - floor($row['stars']) > 0) {
+                echo '<i class="fas fa-star-half-alt"></i>';
+            }
+            echo '</div></div></div>';
         }
-        if ($review['stars'] - floor($review['stars']) > 0) {
-            echo '<i class="fas fa-star-half-alt"></i>';
-        }
-        echo '</div>';
-        echo '</div>';
-        echo '</div>';
     }
     ?>
 </div>
 
+<!-- Feedback Floating Button -->
+<button id="feedbackBtn" class="feedback-float-btn">
+    <i class="fas fa-comment-alt"></i> Give Feedback
+</button>
+
+<!-- Modal -->
+<div id="feedbackModal" class="feedback-modal">
+    <div class="modal-content">
+        <span class="close-btn" id="closeModal">&times;</span>
+        <h2>Share Your Feedback</h2>
+        <form action="submit-feedback.php" method="POST" enctype="multipart/form-data" class="feedback-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <select name="stars" required>
+                <option value="">Rate Us</option>
+                <option value="5">★★★★★ - Excellent</option>
+                <option value="4">★★★★☆ - Very Good</option>
+                <option value="3">★★★☆☆ - Good</option>
+                <option value="2">★★☆☆☆ - Fair</option>
+                <option value="1">★☆☆☆☆ - Poor</option>
+            </select>
+            <textarea name="text" rows="4" placeholder="Your Message" required></textarea>
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+</div>
+
 <script>
-    const reviewCards = document.querySelectorAll('.review-card');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = 'translateY(0) rotate(0)';
-            }
-        });
-    }, { threshold: 0.1 });
+    const feedbackBtn = document.getElementById('feedbackBtn');
+    const feedbackModal = document.getElementById('feedbackModal');
+    const closeModal = document.getElementById('closeModal');
 
-    reviewCards.forEach((card, index) => {
-        card.style.opacity = 0;
-        card.style.transform = `translateY(50px) rotate(${index % 2 === 0 ? -5 : 5}deg)`;
-        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(card);
-    });
-
-    // Add hover effect
-    reviewCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-10px) rotate(2deg) scale(1.05)';
-        });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0) rotate(0) scale(1)';
-        });
-    });
+    feedbackBtn.onclick = () => feedbackModal.style.display = 'block';
+    closeModal.onclick = () => feedbackModal.style.display = 'none';
+    window.onclick = (e) => { if (e.target == feedbackModal) feedbackModal.style.display = 'none'; }
 </script>
 
 <?php include('partials-front/footer.php'); ?>

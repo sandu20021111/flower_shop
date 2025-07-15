@@ -37,10 +37,6 @@ $cart_count = mysqli_num_rows($res);
         <div class="cart-items">
             <div class="cart-header">
                 <h2>Cart</h2>
-                <div class="select-all">
-                    <input type="checkbox" id="select-all" style="margin-right: 8px;">
-                    <label for="select-all">SELECT ALL (<?php echo $cart_count; ?> ITEM(S))</label>
-                </div>
             </div>
 
             <?php

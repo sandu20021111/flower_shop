@@ -21,12 +21,13 @@ if (!isset($_SESSION['user'])) {
         <div class="logo">
             <h1>Flowerworld</h1>
         </div>
-        <nav>
+       <nav>
             <a href="index.php" class="active"><i class="fas fa-home"></i> <span>Dashboard</span></a>
             <a href="manage-admin.php"><i class="fas fa-users-cog"></i> <span>Admin</span></a>
             <a href="manage-category.php"><i class="fas fa-gift"></i> <span>Occasions</span></a>
             <a href="manage-flower.php"><i class="fas fa-spa"></i> <span>Flowers</span></a>
             <a href="manage-order.php"><i class="fas fa-shopping-cart"></i> <span>Order</span></a>
+            <a href="manage-feedback.php"><i class="fas fa-comments"></i> <span>Feedback</span></a>
         </nav>
         <div class="sidebar-footer">
             <div class="user-profile">
@@ -69,7 +70,15 @@ if (!isset($_SESSION['user'])) {
             $res4 = mysqli_query($conn, $sql4);
             $row4 = mysqli_fetch_assoc($res4);
             $total_revenue = $row4['Total'] ?? 0;
+
+
+             // ✅ Count feedbacks
+            $sql5 = "SELECT * FROM tbl_feedback";
+            $res5 = mysqli_query($conn, $sql5);
+            $count5 = mysqli_num_rows($res5);
         ?>
+
+
 
         <div class="dashboard-stats">
             <div class="stat-card categories">
@@ -95,6 +104,7 @@ if (!isset($_SESSION['user'])) {
                     <p>Total Orders</p>
                 </div>
             </div>
+            
 
             <div class="stat-card revenue">
                 <div class="stat-icon"><i class="fas fa-dollar-sign"></i></div>
@@ -102,6 +112,14 @@ if (!isset($_SESSION['user'])) {
                     <h2>Rs.<?php echo $total_revenue; ?></h2>
                     <p>Revenue Generated</p>
                 </div>
+            </div>
+        </div>
+        
+        <div class="stat-card feedbacks">
+            <div class="stat-icon"><i class="fas fa-comments"></i></div>
+            <div class="stat-info">
+                <h2><?php echo $count5; ?></h2>
+                <p>Feedbacks</p>
             </div>
         </div>
 

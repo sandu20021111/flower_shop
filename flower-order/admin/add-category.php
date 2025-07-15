@@ -19,12 +19,13 @@ if (!isset($_SESSION['user'])) {
         <div class="logo">
             <h1>Flowerworld</h1>
         </div>
-        <nav>
-            <a href="index.php"><i class="fas fa-home"></i> <span>Dashboard</span></a>
+       <nav>
+            <a href="index.php" class="active"><i class="fas fa-home"></i> <span>Dashboard</span></a>
             <a href="manage-admin.php"><i class="fas fa-users-cog"></i> <span>Admin</span></a>
-            <a href="manage-category.php" class="active"><i class="fas fa-list"></i> <span>Occasions</span></a>
+            <a href="manage-category.php"><i class="fas fa-gift"></i> <span>Occasions</span></a>
             <a href="manage-flower.php"><i class="fas fa-spa"></i> <span>Flowers</span></a>
             <a href="manage-order.php"><i class="fas fa-shopping-cart"></i> <span>Order</span></a>
+            <a href="manage-feedback.php"><i class="fas fa-comments"></i> <span>Feedback</span></a>
         </nav>
         <div class="sidebar-footer">
             <div class="user-profile">
@@ -59,15 +60,7 @@ if (!isset($_SESSION['user'])) {
                         <label for="image"><i class="fas fa-upload"></i> Choose a file</label>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label>Featured</label>
-                    <div class="radio-group">
-                        <label><input type="radio" name="featured" value="Yes"> Yes</label>
-                        <label><input type="radio" name="featured" value="No" checked> No</label>
-                    </div>
-                </div>
-
+                
                 <div class="form-group">
                     <label>Active</label>
                     <div class="radio-group">
