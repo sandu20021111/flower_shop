@@ -114,9 +114,7 @@ if (!isset($_SESSION['user'])) {
         <p>@<?php echo $username; ?></p>
     </div>
     <div class="admin-actions">
-        <a href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn-password">
-            <i class="fas fa-key"></i> Change Password
-        </a>
+       
         <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn-update">
             <i class="fas fa-edit"></i> Update Admin
         </a>
