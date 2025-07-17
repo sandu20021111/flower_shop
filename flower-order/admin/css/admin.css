@@ -73,7 +73,10 @@
     font-size: 0.9em;
 }
 
-
+.admin-actions .btn-password {
+    background-color: #3498db; /* Blue */
+    color: white;
+}
 
 .admin-actions .btn-update {
     background-color: #2ecc71; /* Green */
