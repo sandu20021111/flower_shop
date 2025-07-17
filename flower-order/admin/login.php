@@ -46,305 +46,154 @@ if(isset($_SESSION['no-login-message']))
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login - FlowerWorld. Flower Order System</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-        
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #f18930, #ff6b6b);
-            overflow: hidden;
-            position: relative;
-            }
-        
-        .login-container {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            width: 400px;
-            text-align: center;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .login-container:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-        
-        .login-container::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                to bottom right,
-                rgba(255, 255, 255, 0.3),
-                rgba(255, 255, 255, 0.1)
-            );
-            transform: rotate(45deg);
-            pointer-events: none;
-        }
-        
-        .login-icon {
-            font-size: 64px;
-            color: #f18930;
-            margin-bottom: 30px;
-            animation: bounce 2s infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-20px);
-            }
-            60% {
-                transform: translateY(-10px);
-            }
-        }
-        
-        h1 {
-            color: #333;
-            margin-bottom: 30px;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        
-        .input-group {
-            margin-bottom: 30px;
-            position: relative;
-        }
-        
-        .input-group input {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 25px;
-            background-color: #f0f0f0;
-            outline: none;
-            font-size: 16px;
-            transition: all 0.3s;
-        }
-        
-        .input-group input:focus {
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(241, 137, 48, 0.3);
-        }
-        
-        .input-group label {
-            position: absolute;
-            top: 50%;
-            left: 20px;
-            transform: translateY(-50%);
-            color: #999;
-            pointer-events: none;
-            transition: 0.3s;
-        }
-        
-        .input-group input:focus + label,
-        .input-group input:valid + label {
-            top: 0;
-            left: 15px;
-            font-size: 12px;
-            color: #f18930;
-            background-color: #fff;
-            padding: 0 5px;
-        }
-        
-        .btn-login {
-            background-color: #f18930;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-login:hover {
-            background-color: #e67e22;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.4);
-        }
-        
-        .btn-login::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: all 0.5s;
-        }
-        
-        .btn-login:active::after {
-            width: 300px;
-            height: 300px;
-            opacity: 0;
-        }
-        
-        .error-message, .success-message {
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 5px;
-            font-weight: bold;
-            animation: fadeIn 0.5s;
-        }
-        
-        .error-message {
-            background-color: #ffecec;
-            color: #ff4757;
-        }
-        
-        .success-message {
-            background-color: #e8f5e9;
-            color: #2ed573;
-        }
-        
-
-.animated-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.5;
-}
-
-.animated-background span {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    animation: move 3s linear infinite;
-    border-radius: 50%;
-}
-
-@keyframes move {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 0;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login - FlowerWorld</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
     }
-    100% {
-        transform: translateY(-1000px) rotate(720deg);
+
+    body {
+      height: 100vh;
+      background: linear-gradient(to right, #2c3e50, #a685d1, #ed2884);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .floating-flowers img {
+      position: absolute;
+      animation: float 14s linear infinite;
+      opacity: 0.5;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(360deg);
         opacity: 0;
-        border-radius: 50%;
+      }
     }
-}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    .login-card {
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
+      padding: 40px;
+      width: 380px;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .login-card img.logo {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+
+    .login-card h2 {
+      margin-bottom: 25px;
+      font-size: 24px;
+      color: #c44569;
+    }
+
+    .input-box {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .input-box input {
+      width: 100%;
+      padding: 14px 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    .input-box input:focus {
+      border-color: #c44569;
+      box-shadow: 0 0 5px rgba(196, 69, 105, 0.4);
+    }
+
+    .btn-submit {
+      padding: 14px 30px;
+      border: none;
+      background-color: #c44569;
+      color: white;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      background-color: #b3395d;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .error-message {
+      color: #d63031;
+    }
+
+    .success-message {
+      color: #2ecc71;
+    }
+  </style>
 </head>
 <body>
-<div class="animated-background">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+
+<!-- Floating flowers -->
+<div class="floating-flowers">
+  <img src="../images/home/flower3.png" style="left: 5%; width: 50px; animation-delay: 3s;">
+  <img src="../images/home/flower1.png" style="left: 15%; width: 50px; animation-delay: 2s;">
+  <img src="../images/home/flower3.png" style="left: 30%; width: 60px; animation-delay: 4s;">
+  <img src="../images/home/flower1.png" style="left: 55%; width: 55px; animation-delay: 6s;">
+  <img src="../images/home/flower3.png" style="left: 65%; width: 40px; animation-delay: 3s;">
+  <img src="../images/home/flower1.png" style="left: 80%; width: 65px; animation-delay: 5s;">
+  <img src="../images/home/flower3.png" style="left: 40%; width: 75px; animation-delay: 7s;">
+  <img src="../images/home/flower1.png" style="left: 95%; width: 50px; animation-delay: 1s;">
+</div>
+
+<!-- Login Card -->
+<div class="login-card">
+  <img src="../images/home/logo1.png" alt="FlowerWorld Logo" class="logo" />
+  <h2>Admin Login</h2>
+
+  <?php 
+    if($login_message != '') {
+        echo '<p class="message ' . (strpos($login_message, 'Success') !== false ? 'success-message' : 'error-message') . '">' . $login_message . '</p>';
+    }
+    if($no_login_message != '') {
+        echo '<p class="message error-message">' . $no_login_message . '</p>';
+    }
+  ?>
+
+  <form action="" method="POST">
+    <div class="input-box">
+      <input type="text" name="username" placeholder="Username" required />
     </div>
-    <div class="login-container">
-        <img src="../images/home/logo1.png" alt="Flowerworld Logo" style="height: 60px; vertical-align: middle;"><br><br>
-        <h1>Admin Login</h1>
-        <?php 
-            if($login_message != '') {
-                echo '<p class="' . (strpos($login_message, 'Success') !== false ? 'success-message' : 'error-message') . '">' . $login_message . '</p>';
-            }
-            if($no_login_message != '') {
-                echo '<p class="error-message">' . $no_login_message . '</p>';
-            }
-        ?>
-        <form action="" method="POST">
-        <div class="input-group">
-                <input type="text" name="username" required>
-                <label>Username</label>
-            </div>
-            <div class="input-group">
-                <input type="password" name="password" required>
-                <label>Password</label>
-            </div>
-            <button type="submit" name="submit" class="btn-login">Login</button>
-        </form>
+    <div class="input-box">
+      <input type="password" name="password" placeholder="Password" required />
     </div>
+    <button type="submit" name="submit" class="btn-submit">Login</button>
+  </form>
+</div>
 
-    <script>
-       
-       const inputs = document.querySelectorAll('.input-group input');
-        inputs.forEach(input => {
-            input.addEventListener('focus', () => {
-                input.parentNode.classList.add('focus');
-            });
-            input.addEventListener('blur', () => {
-                if (input.value === '') {
-                    input.parentNode.classList.remove('focus');
-                }
-            });
-        });
-
-        
-        const loginBtn = document.querySelector('.btn-login');
-        loginBtn.addEventListener('click', function(e) {
-            let x = e.clientX - e.target.offsetLeft;
-            let y = e.clientY - e.target.offsetTop;
-            
-            let ripple = document.createElement('span');
-            ripple.style.left = `${x}px`;
-            ripple.style.top = `${y}px`;
-            this.appendChild(ripple);
-            
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-    const background = document.querySelector('.animated-background');
-    const spans = background.querySelectorAll('span');
-
-    spans.forEach(span => {
-        const size = Math.random() * 50 + 10; 
-        span.style.width = `${size}px`;
-        span.style.height = `${size}px`; 
-        span.style.top = `${Math.random() * 100}%`;
-        span.style.left = `${Math.random() * 100}%`;
-        span.style.animationDuration = `${Math.random() * 2 + 2}s`; 
-        span.style.animationDelay = `${Math.random() * 2}s`;
-    });
-});
-    </script>
 </body>
 </html>

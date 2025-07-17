@@ -53,12 +53,13 @@ if (!isset($_SESSION['user'])) {
 }
 
 .feedback-card img {
-    width: 100%;
-    max-height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-}
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 18px auto;
+            border: 3px solid black;
+        }
 
 .feedback-info {
     font-family: Arial, sans-serif;
@@ -70,9 +71,10 @@ if (!isset($_SESSION['user'])) {
 }
 
 .feedback-stars {
-    color: #f8b500;
-    font-weight: 700;
-}
+    color: #f39c12;
+    font-weight: bold;
+}   
+
 
 .feedback-message {
     font-style: italic;
