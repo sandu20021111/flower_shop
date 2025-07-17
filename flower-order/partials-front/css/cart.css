@@ -48,26 +48,7 @@
     max-width: fit-content;
 }
 
-.select-all {
-    display: flex;
-    align-items: center;      
-    gap: 4px;
-    font-size: 16px;
-    color: #555;
-    font-weight: 600;
-    user-select: none;
-    white-space: nowrap;
-    line-height: 1;           
-}
 
-.select-all input[type="checkbox"] {
-    accent-color: #f6f4f4;
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-    vertical-align: middle;   
-    display: inline-block;
-}
 
 
 .cart-item {

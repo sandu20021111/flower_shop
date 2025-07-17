@@ -6,7 +6,7 @@ include('config/constants.php');
 // Get user session ID
 $session_id = session_id();
 
-// Fetch cart items
+// Fetch cart items from database
 $sql = "SELECT * FROM tbl_cart WHERE user_session = '$session_id'";
 $res = mysqli_query($conn, $sql);
 $cart_count = mysqli_num_rows($res);
@@ -54,6 +54,7 @@ $cart_count = mysqli_num_rows($res);
                         $image_name = $img_row['image_name'];
                     }
                 }
+                 // If image is missing, use placeholder
                 $image_file = !empty($image_name) && file_exists("images/flower/" . $image_name) ? $image_name : 'placeholder.jpg';
                 $image_path = SITEURL . "images/flower/" . $image_file;
             ?>

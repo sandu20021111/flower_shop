@@ -39,6 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mysqli_query($conn, $sql_order);
     }
 
+    
+    // Clear the cart after order is placed
     mysqli_query($conn, "DELETE FROM tbl_cart WHERE user_session = '$session_id'");
     header("Location: cart.php?success=1");
     exit();

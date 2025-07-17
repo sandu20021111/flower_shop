@@ -2,7 +2,7 @@
 ob_start(); 
 include('partials-front/menu.php');
 
-
+// Check if flower_id is passed through GET method
 if(isset($_GET['flower_id'])) {
     $flower_id = $_GET['flower_id'];
     $sql = "SELECT * FROM tbl_flower WHERE id=$flower_id";
