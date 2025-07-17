@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2025 at 08:54 PM
+-- Generation Time: Jul 17, 2025 at 08:07 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -66,7 +66,9 @@ CREATE TABLE `tbl_cart` (
 INSERT INTO `tbl_cart` (`id`, `flower_id`, `flower_name`, `price`, `qty`, `user_session`, `added_date`, `image_name`) VALUES
 (32, 15, 'Red Rose', 700.00, 1, 'kbp79cb9fpukpldkgrqblg9c9s', '2025-07-14 23:14:52', NULL),
 (39, 13, 'Lily', 850.00, 2, '2neun3le3r6fp3dg4bp8877fhu', '2025-07-15 19:43:45', NULL),
-(40, 4, 'Orchid', 5000.00, 2, '2neun3le3r6fp3dg4bp8877fhu', '2025-07-16 00:14:46', NULL);
+(40, 4, 'Orchid', 5000.00, 2, '2neun3le3r6fp3dg4bp8877fhu', '2025-07-16 00:14:46', NULL),
+(41, 9, 'Daisies', 6500.00, 1, '4g6q865u00n5qne33l9q497o11', '2025-07-16 11:20:07', NULL),
+(42, 4, 'Orchid', 5000.00, 1, 'r5qo572nvqhhlab5mdo1sego90', '2025-07-17 14:10:06', NULL);
 
 -- --------------------------------------------------------
 
@@ -97,6 +99,27 @@ INSERT INTO `tbl_category` (`id`, `title`, `image_name`, `featured`, `active`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_contact_messages`
+--
+
+CREATE TABLE `tbl_contact_messages` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `full_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `submission_date` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_contact_messages`
+--
+
+INSERT INTO `tbl_contact_messages` (`id`, `full_name`, `email`, `message`, `submission_date`) VALUES
+(1, 'sanduni', 'sandu@gmail.com', 'hi', '2025-07-17 23:34:19');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_feedback`
 --
 
@@ -118,7 +141,9 @@ INSERT INTO `tbl_feedback` (`id`, `name`, `stars`, `text`, `created_at`, `image`
 (6, 'Pubudu Chathuranga', 4, 'The roses were vibrant and fragrant. Delivered on time and exactly as shown on the website.', '2025-07-15 18:32:59', '1752604379_pubudu_chathuranga.jfif'),
 (7, 'Anusha Damayanthi', 5, 'Perfect flowers for my anniversary. The colors were lovely and the packaging was elegant.', '2025-07-15 18:34:50', '1752604490_anusha_damayanthi.jpg'),
 (8, 'Akila Dhanuddara', 3, 'The sympathy flowers were elegant and respectful. Could use more fragrance though.', '2025-07-15 18:35:32', '1752604532_akila_danuddara.jfif'),
-(9, 'Shanudri Priyasad', 5, 'Impressed by the exotic flower arrangement. The orchids were fresh and lasted long.', '2025-07-15 18:36:19', '1752604579_shanudri_priyasad.jpg');
+(9, 'Shanudri Priyasad', 5, 'Impressed by the exotic flower arrangement. The orchids were fresh and lasted long.', '2025-07-15 18:36:19', '1752604579_shanudri_priyasad.jpg'),
+(10, 'nethmi rosel', 5, 'dhcbgsdy byscb8aysbcau', '2025-07-17 05:59:01', '1752731941_nethmi_roshel.jpg'),
+(11, 'saranga', 3, 'nice', '2025-07-17 06:10:13', '1752732613_saranaga_dissasekara.jfif');
 
 -- --------------------------------------------------------
 
@@ -214,6 +239,12 @@ ALTER TABLE `tbl_category`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_contact_messages`
+--
+ALTER TABLE `tbl_contact_messages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_feedback`
 --
 ALTER TABLE `tbl_feedback`
@@ -239,13 +270,13 @@ ALTER TABLE `tbl_order`
 -- AUTO_INCREMENT for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `tbl_category`
@@ -254,10 +285,16 @@ ALTER TABLE `tbl_category`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
+-- AUTO_INCREMENT for table `tbl_contact_messages`
+--
+ALTER TABLE `tbl_contact_messages`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `tbl_feedback`
 --
 ALTER TABLE `tbl_feedback`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tbl_flower`

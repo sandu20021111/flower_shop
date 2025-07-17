@@ -1,5 +1,5 @@
-<?php 
-include('partials-front/menu.php'); 
+<?php
+include('partials-front/menu.php');
 ?>
 
 <style>
@@ -24,7 +24,7 @@ include('partials-front/menu.php');
 
     .contact-info {
         flex: 1;
-        background-color: 	#ffd6d6;
+        background-color: #ffd6d6;
         padding: 60px 40px;
         display: flex;
         flex-direction: column;
@@ -115,37 +115,37 @@ include('partials-front/menu.php');
         transform: translateY(-5px);
         box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
     }
-.form-group {
-    margin-bottom: 25px;
-    width: 100%;
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
-}
+    .form-group {
+        margin-bottom: 25px;
+        width: 100%;
+        box-sizing: border-box; /* Ensure padding doesn't affect width */
+    }
 
-input,
-textarea {
-    width: 100%;
-    max-width: 100%;
-    padding: 15px;
-    background-color: #f5f5f5;
-    border: none;
-    border-radius: 8px;
-    color: #333;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    box-sizing: border-box; /* Prevent overflow due to padding */
-}
+    input,
+    textarea {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+        background-color: #f5f5f5;
+        border: none;
+        border-radius: 8px;
+        color: #333;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        box-sizing: border-box; /* Prevent overflow due to padding */
+    }
 
-input:focus,
-textarea:focus {
-    background-color: #ffffff;
-    box-shadow: 0 0 0 2px #ff6b6b;
-    outline: none;
-}
+    input:focus,
+    textarea:focus {
+        background-color: #ffffff;
+        box-shadow: 0 0 0 2px #ff6b6b;
+        outline: none;
+    }
 
-textarea {
-    height: 150px;
-    resize: vertical;
-}
+    textarea {
+        height: 150px;
+        resize: vertical;
+    }
 
 
     .submit-btn {
@@ -226,33 +226,63 @@ textarea {
     }
 
     .contact-map {
-    width: 100%;
-    margin-top: 10px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
 
-.visit-location-heading {
-    margin-top: 40px;
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 28px;
-    font-weight: 600;
-    text-align: center;
-    letter-spacing: 0.5px;
-    position: relative;
-}
+    .visit-location-heading {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        color: #333;
+        font-size: 28px;
+        font-weight: 600;
+        text-align: center;
+        letter-spacing: 0.5px;
+        position: relative;
+    }
 
-.visit-location-heading::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #ff6b6b; /* Accent underline color */
-    margin: 10px auto 0;
-    border-radius: 2px;
-}
+    .visit-location-heading::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background-color: #ff6b6b; /* Accent underline color */
+        margin: 10px auto 0;
+        border-radius: 2px;
+    }
+
+    /* Styles for Success/Error Messages */
+    .text-center {
+        text-align: center;
+    }
+    .success {
+        color: #28a745; /* Green */
+        background-color: #d4edda; /* Light green background */
+        border: 1px solid #c3e6cb;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+    .error {
+        color: #dc3545; /* Red */
+        background-color: #f8d7da; /* Light red background */
+        border: 1px solid #f5c6cb;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+    .warning { /* For messages where one part succeeded but another failed */
+        color: #ffc107; /* Amber/Yellow */
+        background-color: #fff3cd; /* Light yellow background */
+        border: 1px solid #ffeeba;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+
 
 </style>
 
@@ -260,7 +290,7 @@ textarea {
     <div class="container header-container">
         <div class="logo-container">
             <h1 class="logo">
-                 <img src="images/home/logo1.png" alt="Flowerworld Logo" style="height: 50px; vertical-align: middle;"> Flowerworld
+                <img src="images/home/logo1.png" alt="Flowerworld Logo" style="height: 50px; vertical-align: middle;"> Flowerworld
             </h1>
         </div>
         <nav>
@@ -295,7 +325,17 @@ textarea {
     </div>
     <div class="contact-form">
         <h2>Send Us a Message</h2>
-        <form id="contactForm">
+
+        <?php
+            // Display session messages here
+            if(isset($_SESSION['contact_message']))
+            {
+                echo $_SESSION['contact_message']; // Displaying Session Message
+                unset($_SESSION['contact_message']); // Removing Session Message after display
+            }
+        ?>
+
+        <form id="contactForm" action="process-contact.php" method="POST">
             <div class="form-group">
                 <label for="name">Your Name</label>
                 <div class="input-animation">
@@ -319,29 +359,17 @@ textarea {
     </div>
 </div>
 
-
 <h3 class="visit-location-heading">Visit Our Flower Shop Location</h3>
 
 <div class="contact-map">
-    <iframe 
-    src="https://maps.google.com/maps?q=6.886695720219892,79.8869851693149&z=15&output=embed" 
-    width="100%" 
-    height="300" 
-    style="border:0; border-radius: 12px; margin-top: 10px;" 
-    allowfullscreen="" 
-    loading="lazy" 
+    <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.91698263592!2d79.9103565757917!3d6.899661293100371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2509172fec017%3A0x6b450702f3c7e7b5!2sSri%20Jayawardenepura%20Kotte!5e0!3m2!1sen!2slk!4v1700000000000!5m2!1sen!2slk"
+    width="100%"
+    height="300"
+    style="border:0; border-radius: 12px; margin-top: 10px;"
+    allowfullscreen=""
+    loading="lazy"
     referrerpolicy="no-referrer-when-downgrade">
 </iframe>
 </div>
-
-
-<script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-    
-        alert('Thank you for your message. We will get back to you soon!');
-        this.reset();
-    });
-</script>
-
 <?php include('partials-front/footer.php'); ?>
