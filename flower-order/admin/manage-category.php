@@ -87,14 +87,14 @@ if (!isset($_SESSION['user'])) {
             }
         ?>
 
-<div class="admin-actions">
+        <div class="admin-actions">
             <a href="add-category.php" class="btn-primary" id="addadmin-btn">
                 <i class="fas fa-plus"></i> Add Category
             </a>
         </div>
 
 
-<div class="category-grid">
+        <div class="category-grid">
             <?php 
                 $sql = "SELECT * FROM tbl_category";
                 $res = mysqli_query($conn, $sql);
@@ -132,6 +132,10 @@ if (!isset($_SESSION['user'])) {
                                 <div class="category-info">
                                     <h3><?php echo $title; ?></h3>
                                     <p>
+
+                                        <span class="badge <?php echo $featured == 'Yes' ? 'badge-featured' : ''; ?>">
+                                            <?php echo $featured == 'Yes' ? 'Featured' : 'Not Featured'; ?>
+                                        </span>
                                         <span class="badge <?php echo $active == 'Yes' ? 'badge-active' : ''; ?>">
                                             <?php echo $active == 'Yes' ? 'Active' : 'Inactive'; ?>
                                         </span>

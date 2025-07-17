@@ -60,7 +60,15 @@ if (!isset($_SESSION['user'])) {
                         <label for="image"><i class="fas fa-upload"></i> Choose a file</label>
                     </div>
                 </div>
-                
+
+                <div class="form-group">
+                    <label>Featured</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="featured" value="Yes"> Yes</label>
+                        <label><input type="radio" name="featured" value="No" checked> No</label>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label>Active</label>
                     <div class="radio-group">

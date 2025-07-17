@@ -4,8 +4,8 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-include('../config/constants.php'); // Database connection
-include('partials/menu.php');       // Sidebar and header
+include('../config/constants.php'); 
+include('partials/menu.php');       
 
 // Check if admin is logged in
 if (!isset($_SESSION['user'])) {
@@ -16,7 +16,6 @@ if (!isset($_SESSION['user'])) {
 ?>
 
 <style>
-/* Removed sidebar CSS */
 
 /* Main content and cards styling */
 

@@ -113,9 +113,8 @@ if (!isset($_SESSION['user'])) {
                     <p>Revenue Generated</p>
                 </div>
             </div>
-        </div>
-        
-        <div class="stat-card feedbacks">
+
+             <div class="stat-card feedbacks">
             <div class="stat-icon"><i class="fas fa-comments"></i></div>
             <div class="stat-info">
                 <h2><?php echo $count5; ?></h2>
@@ -123,6 +122,10 @@ if (!isset($_SESSION['user'])) {
             </div>
         </div>
 
+
+
+        </div>
+        
         <div class="recent-activity">
             <h2>Recent Activity</h2>
             <ul id="activity-list">

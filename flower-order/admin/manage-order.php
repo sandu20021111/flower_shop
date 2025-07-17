@@ -51,7 +51,6 @@ if (!isset($_SESSION['user'])) {
         ?>
 
         <div class="admin-actions">
-            
         </div>
 
         <div class="order-grid">
@@ -85,10 +84,10 @@ if (!isset($_SESSION['user'])) {
                                 <p>Total: Rs.<?php echo $total; ?></p>
                                 <p>Order Date: <?php echo $order_date; ?></p>
                                 <p>
-    <span class="badge badge-<?php echo strtolower(str_replace(' ', '-', $status)); ?>">
-        <?php echo $status; ?>
-    </span>
-</p>
+                                    <span class="badge badge-<?php echo strtolower(str_replace(' ', '-', $status)); ?>">
+                                        <?php echo $status; ?>
+                                    </span>
+                                </p>
                             </div>
                             <div class="customer-info">
                                 <h4>Customer Details</h4>

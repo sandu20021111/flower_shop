@@ -109,6 +109,14 @@ if (!isset($_SESSION['user'])) {
                 </div>
 
                 <div class="form-group">
+                    <label>Featured</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="featured" value="Yes" <?php if($featured=="Yes"){echo "checked";} ?>> Yes</label>
+                        <label><input type="radio" name="featured" value="No" <?php if($featured=="No"){echo "checked";} ?>> No</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label>Active</label>
                     <div class="radio-group">
                         <label><input type="radio" name="active" value="Yes" <?php if($active=="Yes"){echo "checked";} ?>> Yes</label>
@@ -483,7 +491,7 @@ if(isset($_POST['submit']))
         if($image_name != "")
         {
             $ext = end(explode('.', $image_name));
-            $image_name = "Food_Category_".rand(000, 999).'.'.$ext;
+            $image_name = "Flower_Category_".rand(000, 999).'.'.$ext;
             $source_path = $_FILES['image']['tmp_name'];
             $destination_path = "../images/category/".$image_name;
             $upload = move_uploaded_file($source_path, $destination_path);
